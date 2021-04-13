@@ -1,0 +1,32 @@
+
+.bold-item {
+    font-weight: bold;
+    color: red;
+}
+
+.footer {
+    width: 100%;
+    background-color: aqua;
+
+    &-container {
+    width: 40%;
+    height: 100px;
+    background-color: blue;
+    padding: 10px 0;
+
+    &-title {
+        color: brown;
+    }
+
+    &-text {
+        color: lightblue;
+    }
+
+    .bold-item {
+        font-weight: bold;
+        color: lightgreen;
+    }
+    }
+}
+
+/* .footer-container-title */
