@@ -161,8 +161,6 @@ export class FooterComponent implements OnInit {
     obsNumbers.subscribe(data => {
       console.log(data);
     });
-
-    this.numberArray.push(7);
   }
 
 }
