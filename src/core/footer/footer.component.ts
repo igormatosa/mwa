@@ -161,6 +161,62 @@ export class FooterComponent implements OnInit {
     obsNumbers.subscribe(data => {
       console.log(data);
     });
+
+    const numbersArr: number[] = [3,4];
+    const numbersArr2: number[] = [1,2];
+
+    const finalNumbersArr: number[] = [...numbersArr2, ...numbersArr];
+    console.log(finalNumbersArr);
+
+    const finalNumbersArr2: number[] = [...numbersArr, ...numbersArr2];
+    console.log(finalNumbersArr2);
+    console.log(finalNumbersArr2.sort());
+
+    const [x,y, ...arr] = [1,2,3,4];
+    console.log(x);
+    console.log(y);
+    console.log(arr);
+
+    const obj = {
+      x: 1,
+      y: 2
+    }
+
+    const obj2 = {
+      d: 10,
+      z: 3
+    }
+
+    const objFinal = {
+      ...obj, ...obj2
+    }
+
+    console.log(objFinal);
+
+    const obj3 = {
+      y: 5,
+      z: 8
+    }
+
+    const objFinal2 = {
+      ...obj, ...obj3
+    }
+
+    console.log(objFinal2);
+
+    const objFinal3 = {
+      ...obj3, ...obj
+    }
+
+    console.log(objFinal3);
+
+    const objFinal4 = {
+      x: 3,
+      y: 6,
+      ... obj2
+    }
+
+    console.log(objFinal4);
   }
 
 }
