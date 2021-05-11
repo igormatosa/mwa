@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
+import { from, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { CONSTANTS } from 'src/shared/constants';
 import { Boolean, Q } from 'src/shared/enums';
@@ -57,7 +57,7 @@ export class FooterComponent implements OnInit {
   constString = CONST;
   konstante = KONSTANTE;
   constants = CONSTANTS;
-  
+
   constructor(
     private generalService: GeneralService
   ) { 
@@ -217,6 +217,28 @@ export class FooterComponent implements OnInit {
     }
 
     console.log(objFinal4);
+  }
+
+  checkInternet(): void {
+
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if(navigator.onLine) {
+          resolve('Imamo internet');
+        } else {
+          reject('Došlo je do greške, nema internet veze');
+        }
+      }, 3000);
+    });
+
+    promise.then(
+      (value) => {
+        console.log(value);
+      },
+      (error) => {
+        throw Error(error);
+      }
+    );
   }
 
 }
