@@ -5,4 +5,7 @@
     <div class="app-menu-container">
         <app-menu></app-menu>
     </div>
+    <div>
+        <button *ngIf="logged" (click)="logout()">Logout</button>
+    </div>
 </header>

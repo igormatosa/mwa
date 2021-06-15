@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminGuard } from 'src/shared/guards/admin.guard';
 import { FormComponent } from './form/form.component';
 import { ListComponent } from './list/list.component';
 
@@ -11,7 +12,8 @@ const routes: Routes = [
     },
     {
         path: 'list',
-        component: ListComponent
+        component: ListComponent,
+        canActivate: [AdminGuard]
     },
     {
         path: 'form',

@@ -4,6 +4,7 @@ import { UsersService } from 'src/shared/services/users.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialog } from './../../../shared/modules/dialog/confirmationDialog';
 import { UserDialog } from 'src/shared/modules/user/user.dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -17,6 +18,7 @@ export class ListComponent implements OnInit {
   
   constructor(
     private usersService: UsersService,
+    private router: Router,
     private dialog: MatDialog) { }
 
   ngOnInit(): void {
